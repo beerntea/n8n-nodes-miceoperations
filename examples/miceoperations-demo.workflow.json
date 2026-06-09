@@ -19,7 +19,7 @@
       },
       "id": "92aa0e6b-0c5a-4b52-9cb1-a83cc4c441ce",
       "name": "Get Company Profile",
-      "type": "n8n-nodes-miceoperations.miceoperations",
+      "type": "@mice-operations/n8n-nodes-miceoperations.miceoperations",
       "typeVersion": 1,
       "position": [
         500,
@@ -42,7 +42,7 @@
       },
       "id": "444759a0-9a6b-4404-bde8-b2606ab5be7b",
       "name": "Get Upcoming Events",
-      "type": "n8n-nodes-miceoperations.miceoperations",
+      "type": "@mice-operations/n8n-nodes-miceoperations.miceoperations",
       "typeVersion": 1,
       "position": [
         760,

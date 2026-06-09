@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-miceoperations",
+	"node": "@mice-operations/n8n-nodes-miceoperations",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Development", "Developer Tools"],

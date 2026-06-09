@@ -1,4 +1,4 @@
-# n8n-nodes-miceoperations
+# @mice-operations/n8n-nodes-miceoperations
 
 This is an n8n community node for MICE Operations. It lets you work with events, clients, invoices, products, locations, webhooks, and external object mappings from MICE Operations in your n8n workflows.
 
@@ -20,6 +20,10 @@ MICE Operations is a platform for hospitality and event operations, including qu
 ## Installation
 
 Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes/installation/) in the n8n community nodes documentation.
+
+Package name for installation:
+
+- `@mice-operations/n8n-nodes-miceoperations`
 
 ## Operations
 
