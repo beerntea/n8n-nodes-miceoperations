@@ -15,7 +15,24 @@ export const webhookDescription: INodeProperties[] = [
 		options: [
 			{ name: 'Get Many', value: 'getAll', action: 'Get many webhooks', routing: { request: { method: 'GET', url: '/webhooks' } } },
 			{ name: 'Create', value: 'create', action: 'Create a webhook', routing: { request: { method: 'POST', url: '/webhooks' } } },
-			{ name: 'Delete', value: 'delete', action: 'Delete a webhook', routing: { request: { method: 'DELETE', url: '=/webhooks/{{$parameter.webhookId}}' } } },
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete a webhook',
+				routing: {
+					request: { method: 'DELETE', url: '=/webhooks/{{$parameter.webhookId}}' },
+					output: {
+						postReceive: [
+							{
+								type: 'setKeyValue',
+								properties: {
+									value: '={{ { "success": true } }}'
+								},
+							},
+						],
+					},
+				},
+			},
 		],
 	},
 	{

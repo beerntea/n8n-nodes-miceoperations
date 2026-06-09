@@ -28,8 +28,42 @@ export const eventDescription: INodeProperties[] = [
 			{ name: 'Add Products', value: 'addProducts', action: 'Add event products', routing: { request: { method: 'POST', url: '=/events/{{$parameter.eventId}}/products', body: '={{$parameter.eventProductsBody}}' } } },
 			{ name: 'Create', value: 'create', action: 'Create an event', routing: { request: { method: 'POST', url: '/events' } } },
 			{ name: 'Create Message', value: 'createMessage', action: 'Create event message', routing: { request: { method: 'POST', url: '=/events/{{$parameter.eventId}}/messages' } } },
-			{ name: 'Delete', value: 'delete', action: 'Delete an event', routing: { request: { method: 'DELETE', url: '=/events/{{$parameter.eventId}}' } } },
-			{ name: 'Delete Activity', value: 'deleteActivity', action: 'Delete event activity', routing: { request: { method: 'DELETE', url: '=/events/{{$parameter.eventId}}/activities/{{$parameter.activityId}}' } } },
+			{
+				name: 'Delete',
+				value: 'delete',
+				action: 'Delete an event',
+				routing: {
+					request: { method: 'DELETE', url: '=/events/{{$parameter.eventId}}' },
+					output: {
+						postReceive: [
+							{
+								type: 'setKeyValue',
+								properties: {
+									value: '={{ { "success": true } }}'
+								},
+							},
+						],
+					},
+				},
+			},
+			{
+				name: 'Delete Activity',
+				value: 'deleteActivity',
+				action: 'Delete event activity',
+				routing: {
+					request: { method: 'DELETE', url: '=/events/{{$parameter.eventId}}/activities/{{$parameter.activityId}}' },
+					output: {
+						postReceive: [
+							{
+								type: 'setKeyValue',
+								properties: {
+									value: '={{ { "success": true } }}'
+								},
+							},
+						],
+					},
+				},
+			},
 			{ name: 'Get', value: 'get', action: 'Get an event', routing: { request: { method: 'GET', url: '=/events/{{$parameter.eventId}}' } } },
 			{ name: 'Get Billed Amount', value: 'getBilledAmount', action: 'Get billed amount', routing: { request: { method: 'GET', url: '=/events/{{$parameter.eventId}}/billed_amount' } } },
 			{ name: 'Get Many', value: 'getAll', action: 'Get many events', routing: { request: { method: 'GET', url: '/events' } } },
