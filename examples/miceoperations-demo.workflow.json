@@ -1,0 +1,85 @@
+{
+  "name": "MICE Operations Demo",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "4cc62f87-3dd4-4ca6-a1bf-4cc08799ecaf",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        260,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "company",
+        "operation": "getMe"
+      },
+      "id": "92aa0e6b-0c5a-4b52-9cb1-a83cc4c441ce",
+      "name": "Get Company Profile",
+      "type": "n8n-nodes-miceoperations.miceoperations",
+      "typeVersion": 1,
+      "position": [
+        500,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "event",
+        "operation": "getAll",
+        "eventDateAfter": "2026-07-01",
+        "eventDateBefore": "2026-07-31",
+        "eventStatus": "confirmed",
+        "eventIncludeClient": true,
+        "eventIncludeLocation": true,
+        "itemsPerPage": 25,
+        "page": 1,
+        "eventSortBy": "datetime_start",
+        "eventSortOrder": "asc"
+      },
+      "id": "444759a0-9a6b-4404-bde8-b2606ab5be7b",
+      "name": "Get Upcoming Events",
+      "type": "n8n-nodes-miceoperations.miceoperations",
+      "typeVersion": 1,
+      "position": [
+        760,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get Company Profile",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Company Profile": {
+      "main": [
+        [
+          {
+            "node": "Get Upcoming Events",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "versionId": "6fd4c9d7-a671-4e10-85c1-74fd3997c0b6",
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "pinData": {},
+  "tags": []
+}
