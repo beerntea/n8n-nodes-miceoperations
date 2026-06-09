@@ -38,7 +38,7 @@
         "itemsPerPage": 25,
         "page": 1,
         "eventSortBy": "datetime_start",
-        "eventSortOrder": "asc"
+        "eventSortOrder": "ASC"
       },
       "id": "444759a0-9a6b-4404-bde8-b2606ab5be7b",
       "name": "Get Upcoming Events",

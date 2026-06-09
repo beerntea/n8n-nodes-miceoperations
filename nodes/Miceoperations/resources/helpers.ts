@@ -47,6 +47,7 @@ export const queryStringField = (
 		send: {
 			type: 'query',
 			property: queryProperty,
+			value: '={{$value !== "" ? $value : undefined}}',
 		},
 	},
 });
