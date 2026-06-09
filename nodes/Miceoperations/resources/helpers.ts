@@ -79,17 +79,34 @@ export const queryNumberField = (
 	},
 });
 
+const buildBooleanDescription = (displayName: string): string => {
+	const lowered = displayName.toLowerCase();
+
+	if (
+		lowered.startsWith('include ') ||
+		lowered.startsWith('merge ') ||
+		lowered.startsWith('use ') ||
+		lowered.startsWith('send ')
+	) {
+		return `Whether to ${lowered}`;
+	}
+
+	return `Whether ${lowered}`;
+};
+
 export const queryBooleanField = (
 	displayName: string,
 	name: string,
 	resource: string,
 	operations: string[],
 	queryProperty: string,
+	description?: string,
 ): INodeProperties => ({
 	displayName,
 	name,
 	type: 'boolean',
 	default: false,
+	description: description ?? buildBooleanDescription(displayName),
 	displayOptions: {
 		show: {
 			resource: [resource],
@@ -230,7 +247,7 @@ export const bodyBooleanField = (
 		bodyProperty,
 		defaultValue,
 		false,
-		description,
+		description ?? buildBooleanDescription(displayName),
 	);
 
 export const bodyJsonField = (
