@@ -3,13 +3,13 @@ import { resourceDescription } from './resources/index';
 
 export class Miceoperations implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'Miceoperations',
+		displayName: 'MICE Operations',
 		name: 'miceoperations',
 		icon: { light: 'file:miceoperations.svg', dark: 'file:miceoperations.dark.svg' },
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
-		description: 'Interact with the Miceoperations API',
+		description: 'Interact with the MICE Operations API',
 		defaults: {
 			name: 'Miceoperations',
 		},

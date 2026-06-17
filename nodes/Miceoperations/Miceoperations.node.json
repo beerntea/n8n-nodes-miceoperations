@@ -1,8 +1,8 @@
 {
-	"node": "@mice-operations/n8n-nodes-miceoperations",
+	"node": "@mice-operations/n8n-nodes-miceoperations.miceoperations",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
-	"categories": ["Development", "Developer Tools"],
+	"categories": ["Development"],
 	"resources": {
 		"credentialDocumentation": [
 			{
