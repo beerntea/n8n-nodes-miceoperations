@@ -11,7 +11,7 @@ export class Miceoperations implements INodeType {
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
 		description: 'Interact with the MICE Operations API',
 		defaults: {
-			name: 'Miceoperations',
+			name: 'MICE Operations',
 		},
 		usableAsTool: true,
 		inputs: [NodeConnectionTypes.Main],
