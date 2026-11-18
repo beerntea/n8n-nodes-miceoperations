@@ -13,6 +13,7 @@ export const webhookDescription: INodeProperties[] = [
 		},
 		default: 'getAll',
 		options: [
+			{ name: 'Get', value: 'get', action: 'Get a webhook', routing: { request: { method: 'GET', url: '=/webhooks/{{$parameter.webhookId}}' } } },
 			{ name: 'Get Many', value: 'getAll', action: 'Get many webhooks', routing: { request: { method: 'GET', url: '/webhooks' } } },
 			{ name: 'Create', value: 'create', action: 'Create a webhook', routing: { request: { method: 'POST', url: '/webhooks' } } },
 			{
@@ -44,7 +45,7 @@ export const webhookDescription: INodeProperties[] = [
 		displayOptions: {
 			show: {
 				resource: ['webhook'],
-				operation: ['delete'],
+				operation: ['get', 'delete'],
 			},
 		},
 	},

@@ -29,6 +29,8 @@ Package name for installation:
 
 Supported resources and operations:
 
+- Availability
+	- Get Many
 - Company
 	- Get Me
 - Event
@@ -39,10 +41,12 @@ Supported resources and operations:
 	- Delete
 	- Get Messages
 	- Create Message
-	- Add Activities
+	- Add Activity
+	- Get Activity
 	- Update Activity
 	- Delete Activity
 	- Add Products
+	- Add Activity Products
 	- Update by Receipt
 	- Get Billed Amount
 - Client
@@ -50,6 +54,9 @@ Supported resources and operations:
 	- Get
 	- Create
 	- Update
+- Point of Sale
+	- Get Setup
+	- Submit Receipt
 - Product
 	- Get Many
 	- Get
@@ -65,6 +72,7 @@ Supported resources and operations:
 	- Add Payment
 	- Confirm Sync
 - Webhook
+	- Get
 	- Get Many
 	- Create
 	- Delete
@@ -105,7 +113,7 @@ General usage pattern:
 2. Select Resource and Operation.
 3. Configure required IDs (for example eventId, clientId, invoiceId).
 4. For create and update operations, fill in the dedicated input fields shown by the selected operation.
-5. For array-based operations such as Add Activities, Add Products, and Update by Receipt, provide the JSON array body in the JSON field.
+5. For array-based operations such as Add Products, Add Activity Products, and Update by Receipt, provide the JSON array body in the JSON field.
 6. Execute the node.
 
 Notes:
@@ -201,28 +209,18 @@ Create an event message:
 - Type: `message`
 - Author Email: `planner@example.com`
 
-Add activities to an event:
+Add an activity to an event:
 
 - Resource: Event
-- Operation: Add Activities
+- Operation: Add Activity
 - Event ID: `481`
-- Activities:
-
-```json
-[
-	{
-		"event_timeline_id": 4,
-		"location_id": 12,
-		"setup_id": 2,
-		"datetime_start": "2026-07-18 17:00:00",
-		"datetime_end": "2026-07-18 18:00:00",
-		"name": "Room setup",
-		"description": "Prepare dining room and welcome desk",
-		"guests": 80,
-		"memo": "Use the gold table setting"
-	}
-]
-```
+- Datetime Start: `2026-07-18 17:00:00`
+- Datetime End: `2026-07-18 18:00:00`
+- Additional Fields:
+	- Name: `Room setup`
+	- Location ID: `12`
+	- Setup ID: `2`
+	- Guests: `40`
 
 Add products to an event:
 

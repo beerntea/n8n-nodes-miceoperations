@@ -32,6 +32,10 @@ export class Miceoperations implements INodeType {
 				noDataExpression: true,
 				options: [
 					{
+						name: 'Availability',
+						value: 'availability',
+					},
+					{
 						name: 'Client',
 						value: 'client',
 					},
@@ -54,6 +58,10 @@ export class Miceoperations implements INodeType {
 					{
 						name: 'Location',
 						value: 'location',
+					},
+					{
+						name: 'Point of Sale',
+						value: 'pos',
 					},
 					{
 						name: 'Product',

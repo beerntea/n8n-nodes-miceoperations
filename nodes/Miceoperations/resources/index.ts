@@ -1,11 +1,13 @@
 import type { INodeProperties } from 'n8n-workflow';
 
+import { availabilityDescription } from './availability';
 import { clientDescription } from './client';
 import { companyDescription } from './company';
 import { eventDescription } from './event';
 import { externalObjectDescription } from './externalObject';
 import { invoiceDescription } from './invoice';
 import { locationDescription } from './location';
+import { posDescription } from './pos';
 import { productDescription } from './product';
 import { webhookDescription } from './webhook';
 
@@ -18,4 +20,6 @@ export const resourceDescription: INodeProperties[] = [
 	...invoiceDescription,
 	...webhookDescription,
 	...externalObjectDescription,
+	...availabilityDescription,
+	...posDescription,
 ];
