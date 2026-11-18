@@ -121,7 +121,7 @@ export const invoiceDescription: INodeProperties[] = [
 	bodyStringField('Client OIN', 'invoiceCreateClientOin', 'invoice', ['create'], 'client_oin'),
 	bodyNumberField('Payment Term', 'invoiceCreatePaymentTerm', 'invoice', ['create'], 'payment_term', 0),
 	bodyNumberField('Amount', 'invoicePaymentAmount', 'invoice', ['addPayment'], 'amount', 0, true),
-	bodyStringField('Date', 'invoicePaymentDate', 'invoice', ['addPayment'], 'date', '', true),
+	bodyStringField('Date', 'invoicePaymentDate', 'invoice', ['addPayment'], 'date', '', true, 'Payment date and time, for example 2026-01-15 10:23:00'),
 	bodyOptionsField(
 		'Type',
 		'invoicePaymentType',
@@ -133,6 +133,7 @@ export const invoiceDescription: INodeProperties[] = [
 			{ name: 'Cash', value: 'cash' },
 			{ name: 'Credit Card', value: 'creditcard' },
 			{ name: 'Debit Card', value: 'debitcard' },
+			{ name: 'Credit', value: 'credit' },
 		],
 		'cash',
 		true,

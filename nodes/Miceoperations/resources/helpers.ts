@@ -318,7 +318,14 @@ export const bodyCollectionField = (
 	type: 'collection',
 	default: {},
 	placeholder,
-	options,
+	// Child displayOptions are evaluated against the collection's own values, where
+	// resource/operation do not exist, so they would hide every child. The parent
+	// collection already controls visibility.
+	options: options.map((option) => {
+		const child = { ...option };
+		delete child.displayOptions;
+		return child;
+	}),
 	displayOptions: {
 		show: {
 			resource: [resource],
